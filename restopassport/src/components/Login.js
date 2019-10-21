@@ -44,6 +44,7 @@ const Login = () => {
               <Field name="password" type="password" placeholder="Password" />
               <ErrorMessage name="password" component="div" />
             </div>
+            <button>Submit</button>
           </Form>
         )}
       />
