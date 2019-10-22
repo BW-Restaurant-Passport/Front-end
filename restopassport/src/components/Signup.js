@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import * as yup from "yup";
 
-const Signup = () => {
+const Signup = (props) => {
   const initialValues = {
     username: "",
     email: "",
@@ -24,6 +24,19 @@ const Signup = () => {
   //         console.log(error.message);
   //       });
   //   };
+
+  const signUpApi = "https://build-restaurant-passport.herokuapp.com/users/register";
+
+  const onSubmit = formValues => {
+    axios
+    .post(signUpApi, formValues)
+    .then(
+      props.history.push("/login")
+    )
+    .catch(error => {
+      console.log(error.message)
+    })
+  }
 
   const validationSchema = yup.object().shape({
     username: yup.string().required("Username required"),
@@ -48,7 +61,7 @@ const Signup = () => {
       <h1>Sign Up</h1>
       <Formik
         initialValues={initialValues}
-        // onSubmit={onSubmit}
+        onSubmit={onSubmit}
         validationSchema={validationSchema}
         render={props => (
           <Form>

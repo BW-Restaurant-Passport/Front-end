@@ -11,7 +11,8 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 const monsterReducer = combineReducers( {
-    city: reducers.cityReducer
+    city: reducers.cityReducer,
+    userDetails: reducers.userReducer
 })
 
 const store = createStore ( 
@@ -24,12 +25,13 @@ const store = createStore (
 );
 
 ReactDOM.render(
-<Provider store={store}>
+  <Provider store={store}>
     <Router>
-        <App />
+      <App />
     </Router>
-</Provider>
-, document.getElementById('root'));
+  </Provider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
