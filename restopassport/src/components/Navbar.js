@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 //scaffolding for navbar component
 //likely to refactored with antUI
@@ -7,21 +8,18 @@ import React from 'react'
 
 function Navbar () {
     return (
-      <div>
-        <nav>
-          <div>
-            <h1>Restaurant Passport</h1>
-            <img src="#"/>
-          </div>
-          <div>
-            <a>Home</a>
-            <a>Login</a>   
-            <a>Showcase</a>
-            <a>Browse</a>
-          </div>
-        </nav>
+      <div className= "navbar">
+        <NavLink to="/">Restaurant Passport</NavLink>
+        <div className="navbar-list">
+          <NavLink to="/signup">Sign Up</NavLink>
+          <NavLink to="/login">Login</NavLink>
+
+          <NavLink to="/showcase">Showcase</NavLink>
+          <NavLink to="/browse">Browse</NavLink>
+          <NavLink to="/passport">Passport</NavLink>
+        </div>
       </div>
-    )
+      )
   };
 
   export default Navbar;

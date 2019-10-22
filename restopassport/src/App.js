@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import RestoCard from "./components/RestoCard";
 import PrivateRoute from "./helpers/PrivateRoute";
 import Passport from "./components/Passport";
-
 import './App.css';
 
 function App() {
