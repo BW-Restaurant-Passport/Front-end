@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
@@ -9,7 +9,6 @@ import RestoCard from "./components/RestoCard";
 import './App.css';
 function App() {
   return (
-  <Router>
     <div className="App">
       <header className="App-header">
 
@@ -23,7 +22,6 @@ function App() {
         {/* <RestoCard /> */}
       </header>
     </div>
-  </Router>
   );
 }
 
@@ -35,4 +33,4 @@ function protectedRoute(Component, props) {
   return 'error';
 }
 
-export default App;
+export default withRouter(App);
