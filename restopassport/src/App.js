@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Navbar from "./components/Navbar";
@@ -14,8 +14,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-        <Login />
-        <Signup />
         <PrivateRoute exact path="/restocard" component={RestoCard} /> 
         <Route
         exact path ="/login" component={Login} />
@@ -27,4 +25,5 @@ function App() {
   );
 }
 
-export default App;
+
+export default withRouter(App);

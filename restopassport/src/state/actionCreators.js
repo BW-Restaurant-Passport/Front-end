@@ -1,35 +1,36 @@
-import * as types from './actions';
-import axiosWithAuth from '../helpers/axiosWithAuth';
+import * as types from "./actions";
+import axiosWithAuth from "../helpers/axiosWithAuth";
+// import thunk from "redux-thunk";
 
-const userApi = "";
+// const userApi = "";
 
-export function setUserDetails(userDetails) {
-  return {
-    type: types.FETCH_USER,
-    payload: userDetails
-  };
-}
-
-// export function setFormDetails(formValues){
-//     return {
-//         type: types.SET_FORM_VALUES,
-//         payload: formValues
-//     }
+// export function setUserDetails(userDetails) {
+//   return {
+//     type: types.FETCH_USER,
+//     payload: userDetails
+//   };
 // }
 
-export const getUser = () => dispatch => {
-  axiosWithAuth()
-    .get(userApi)
-    .then(response => {
-      dispatch(setUserDetails(response.data));
-    })
-    .catch(error => {
-      console.log(error.message);
-    });
-};
+// // export function setFormDetails(formValues){
+// //     return {
+// //         type: types.SET_FORM_VALUES,
+// //         payload: formValues
+// //     }
+// // }
+
+// export const getUser = () => dispatch => {
+//   axiosWithAuth()
+//     .get(userApi)
+//     .then(response => {
+//       dispatch(setUserDetails(response.data));
+//     })
+//     .catch(error => {
+//       console.log(error.message);
+//     });
+// };
+
 
 const cityApi = 'https://build-restaurant-passport.herokuapp.com/cities';
-
 
 export function fetchCity (city) {
     return {
@@ -53,10 +54,10 @@ export const getCityData = () => dispatch => {
     })    
 }
 
+
 // export function fetchRestos (resto) {
 //     return {
 //         type: types.FETCH_RESTOS,
 //         payload: restos
 //     }
 // }
-

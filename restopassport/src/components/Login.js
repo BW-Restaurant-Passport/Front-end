@@ -20,12 +20,13 @@ export const Login = props => {
     axios
       .post(loginApi, formValues)
       .then(response => {
-        const token = response.data.payload;
+        const token = response.data.token;
         localStorage.setItem("token", token);
         props.history.push("/passport");
       })
       .catch(error => {
         console.log(error.message);
+        alert("invalid credentials")
       });
   };
 
