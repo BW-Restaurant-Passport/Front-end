@@ -15,16 +15,17 @@ import * as types from "./actions";
 //   }
 // }
 
-const initialUserDetails = { username: "", password: "" };
 
-export function userReducer(state = initialUserDetails, action) {
-  switch (action.type) {
-    // case types.FETCH_USER:
-    //   return action.payload;
-    default:
-      return initialUserDetails;
-  }
-}
+// const initialUserDetails = { username: "", password: "" };
+
+// export function userReducer(state = initialUserDetails, action) {
+//   switch (action.type) {
+//     // case types.FETCH_USER:
+//     //   return action.payload;
+//     default:
+//       return initialUserDetails;
+//   }
+// }
 
 const initialRestosFetchState = [];
 
@@ -52,3 +53,6 @@ export function cityReducer (state = initialCityFetchState, action) {
     }
 }
    
+
+        
+        
