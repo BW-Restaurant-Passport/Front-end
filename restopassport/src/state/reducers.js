@@ -21,11 +21,6 @@ export function userReducer(state = initialUserDetails, action) {
   switch (action.type) {
     case types.FETCH_USER:
       return action.payload;
-      case types.SET_FORM_VALUES:
-      return {
-          ...state,
-          userDetails: action.payload
-      }
     default:
       return initialUserDetails;
   }
