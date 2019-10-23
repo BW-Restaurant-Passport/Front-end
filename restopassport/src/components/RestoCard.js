@@ -4,7 +4,7 @@ import * as actionCreators from '../state/actionCreators';
 
 
 export function RestoCard ({resto, deleteRestos}) { 
-    debugger
+   
 
 
     return (

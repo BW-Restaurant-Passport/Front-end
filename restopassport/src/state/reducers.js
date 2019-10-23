@@ -30,6 +30,7 @@ const initialRestos = [];
 export function restosReducer(state = initialRestos, action) {
   switch (action.type) {
     case types.FETCH_RESTOS:
+   
       return action.payload;
     default:
       return state;
@@ -47,3 +48,13 @@ export function cityReducer(state = initialCityFetchState, action) {
       return state;
   }
 }
+
+// export const deleteRestos = restID => dispatch => {
+//   debugger;
+//   axiosWithAuth()
+//     .delete(restosApi + restID)
+//     .then(response => {
+//       dispatch(fetchRestos(response));
+//     })
+//     .catch(error => console.log(error.message));
+// };

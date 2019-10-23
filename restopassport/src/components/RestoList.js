@@ -15,7 +15,7 @@ export function RestoList ({restoDetails, getRestos}) {
     useEffect(() => {
         getRestos(restosApi);
     },[]);
-
+    
     return (
         <div className='restoList'> 
             {
@@ -24,7 +24,7 @@ export function RestoList ({restoDetails, getRestos}) {
                 <div>loading</div>
                 :
                 restoDetails.restaurants.map(resto => (     
-                <RestoCard resto={resto}
+                <RestoCard resto={resto} key={resto.restID}
                 />
                 ))
             }

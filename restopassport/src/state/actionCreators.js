@@ -49,7 +49,8 @@ export const getCityData = () => dispatch => {
 export function fetchRestos(restos) {
   return {
     type: types.FETCH_RESTOS,
-    payload: restos
+    payload: { ...restos, restoDetails: {...restos, isDeleted: false, isVisited: false} }
+    
   };
 }
 
@@ -65,12 +66,12 @@ export const getRestos = restosApi => dispatch => {
     });
 };
 
-export const deleteRestos = restID => dispatch => {
-  debugger;
-  axiosWithAuth()
-    .delete(restosApi + restID)
-    .then(response => {
-      dispatch(fetchRestos(response));
-    })
-    .catch(error => console.log(error.message));
-};
+// export const deleteRestos = restID => dispatch => {
+//   debugger;
+//   axiosWithAuth()
+//     .delete(restosApi + restID)
+//     .then(response => {
+//       dispatch(fetchRestos(response));
+//     })
+//     .catch(error => console.log(error.message));
+// };
