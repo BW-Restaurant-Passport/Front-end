@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 //scaffolding for navbar component
 //likely to refactored with antUI
@@ -11,13 +12,13 @@ function Navbar () {
         <nav>
           <div>
             <h1>Restaurant Passport</h1>
-            <img src="#"/>
+            <img src="#" alt="."/>
           </div>
           <div>
-            <a>Home</a>
-            <a>Login</a>   
-            <a>Showcase</a>
-            <a>Browse</a>
+            <Link to="/">Home </Link>
+            <Link to="/login" >Login</Link>   
+            <Link to="">Showcase</Link>
+            <Link to="">Browse</Link>
           </div>
         </nav>
       </div>

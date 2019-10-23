@@ -27,14 +27,13 @@ import * as types from "./actions";
 //   }
 // }
 
-const initialRestosFetchState = [];
 
-export function restosReducer (state= initialRestosFetchState, action) { 
+const initialRestos = [];
+
+export function restosReducer (state = initialRestos, action) { 
     switch(action.type){
         case types.FETCH_RESTOS: 
-        return [...state,
-            ...action.payload]
-            
+        return action.payload;  
             default: 
             return state;
         }

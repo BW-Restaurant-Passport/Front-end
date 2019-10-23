@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 
 
-export function RestoCard ({getCityData, city}) { 
+export function RestoCard ({resto}) { 
 
-    useEffect(() => {
-        getCityData()
-    }, [])
 
     return (
         <div className='restocard'>
@@ -15,10 +12,8 @@ export function RestoCard ({getCityData, city}) {
                 <button /*onClick={onHandleDelete}*/>X</button>
             </div>
             <div>
-                <h1>{city.name}</h1>
-                
-                <h1>Restaurant Name</h1>
-                <p>Description: </p> 
+                <h4>${resto.name}</h4>
+                <img href="#" alt="restaurant image" />
                 <p /*onClick={onHandleStamp}*/ >Add Stamp</p>
                 <img src='#' alt='img caption'/>
             </div>
