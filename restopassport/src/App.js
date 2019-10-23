@@ -14,10 +14,8 @@ function App() {
       {/* <header className="App-header" /> */}
       <Navbar />
       <Route exact path="/login" component={Login} />
-      {/* <Route exact path="/signup" component={Signup} /> */}
-      <Signup />
+      <Route exact path="/" component={Signup} />
       <PrivateRoute exact path="/passport" component={Passport} />
-      {/* <Counter /> */}
     </div>
   );
 }
