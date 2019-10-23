@@ -9,18 +9,22 @@ const restosApi = "https://build-restaurant-passport.herokuapp.com/cities/3/rest
 
 
 
-export function RestoList ({restos, getRestos}) {
+export function RestoList ({restoDetails, getRestos}) {
     debugger
     
     useEffect(() => {
-        getRestos(restosApi);},[]);
+        getRestos(restosApi);
+    },[]);
 
     return (
         <div className='restoList'> 
             {
-                restos.map(resto => (     
-                <RestoCard id={resto.data.id}
-                name={resto.data.restName}
+                !Object.keys(restoDetails).length
+                ?
+                <div>loading</div>
+                :
+                restoDetails.restaurants.map(resto => (     
+                <RestoCard resto={resto}
                 />
                 ))
             }

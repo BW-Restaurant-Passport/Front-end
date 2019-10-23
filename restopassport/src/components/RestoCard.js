@@ -7,12 +7,12 @@ export function RestoCard ({resto}) {
 
 
     return (
-        <div className='restocard'>
+        <div className='restocard' resto={resto} key={resto.id}>
             <div>
                 <button /*onClick={onHandleDelete}*/>X</button>
             </div>
             <div>
-                <h4>${resto.name}</h4>
+                <h4>{resto.restName}</h4>
                 <img href="#" alt="restaurant image" />
                 <p /*onClick={onHandleStamp}*/ >Add Stamp</p>
                 <img src='#' alt='img caption'/>

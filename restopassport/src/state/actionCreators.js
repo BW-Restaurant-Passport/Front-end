@@ -67,7 +67,7 @@ export function fetchRestos(restos){
 
 export const getRestos = (restosApi) => dispatch => {
     debugger
-    axiosWithAuth.get(restosApi)
+    axiosWithAuth().get(restosApi)
     .then(response => {
 debugger
         const restos = response.data;
