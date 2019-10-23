@@ -1,6 +1,8 @@
 import * as types from "./actions";
 import axiosWithAuth from "../helpers/axiosWithAuth";
-// import thunk from "redux-thunk";
+import axios from 'axios';
+
+import thunk from "redux-thunk";
 
 // const userApi = "";
 
@@ -31,6 +33,7 @@ import axiosWithAuth from "../helpers/axiosWithAuth";
 
 
 const cityApi = 'https://build-restaurant-passport.herokuapp.com/cities';
+const restosApi = "https://build-restaurant-passport.herokuapp.com/cities/3/restaurants";
 
 export function fetchCity (city) {
     return {
@@ -55,9 +58,22 @@ export const getCityData = () => dispatch => {
 }
 
 
-// export function fetchRestos (resto) {
-//     return {
-//         type: types.FETCH_RESTOS,
-//         payload: restos
-//     }
-// }
+export function fetchRestos(restos){
+    return {
+        type: types.FETCH_RESTOS,
+        payload: restos,
+    }
+}
+
+export const getRestos = (restosApi) => dispatch => {
+    debugger
+    axiosWithAuth().get(restosApi)
+    .then(response => {
+debugger
+        const restos = response.data;
+        dispatch(fetchRestos(restos));
+    })
+    .catch(error => {
+        console.log(error.message);
+    })
+}

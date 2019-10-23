@@ -1,11 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import "antd/dist/antd.css";
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-
-const { Header, Content, Sider } = Layout;
-
-const { SubMenu } = Menu;
+import React from 'react'
+import {Link} from 'react-router-dom';
 
 
 

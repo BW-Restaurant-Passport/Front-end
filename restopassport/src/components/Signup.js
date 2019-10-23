@@ -4,8 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import * as yup from "yup";
 
-
-const Signup = (props) => {
+const Signup = props => {
   const initialValues = {
     username: "",
     email: "",
@@ -14,18 +13,6 @@ const Signup = (props) => {
     passwordConfirm: ""
   };
 
-  //   const onSubmit = formValues => {
-  //     axios
-  //       .post(url, formValues)
-  //       .then(response => {
-  //         const token = response.data.payload;
-  //         localStorage.setItem("token", reponse.data.token);
-  //         props.history.push("/passport");
-  //       })
-  //       .catch(error => {
-  //         console.log(error.message);
-  //       });
-  //   };
 
   const signUpApi = "https://build-restaurant-passport.herokuapp.com/users/register";
 
