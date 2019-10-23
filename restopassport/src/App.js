@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import RestoCard from "./components/RestoCard";
 import PrivateRoute from "./helpers/PrivateRoute";
 import Passport from "./components/Passport";
+import Button from 'antd/es/button';
+
 import './App.css';
 
 function App() {

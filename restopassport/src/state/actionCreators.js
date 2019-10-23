@@ -42,9 +42,9 @@ export function fetchCity (city) {
 export const getCityData = () => dispatch => {
     
     debugger
-    axiosWithAuth().get(cityApi)
+    axiosWithAuth().get()
     .then(response => {
-        const city = response.data;
+        const city = response.data.results;
         console.log('dddd', city);
         
         dispatch(fetchCity(city))
