@@ -14,8 +14,11 @@ const monsterReducer = combineReducers({
   // the key is the real name for the slice
   // count: reducers.countReducer,
 //   userDetails: reducers.userReducer,
+// city: reducers.cityReducer,
+
   restoDetails: reducers.restosReducer,
-  city: reducers.cityReducer
+  restoDetailsTwo: reducers.restoDetailReducer 
+  
 });
 
 const store = createStore(

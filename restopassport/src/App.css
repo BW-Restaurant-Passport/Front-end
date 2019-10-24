@@ -1,7 +1,17 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
 }
 
+.navbar {
+  font-size: 4rem;
+}
+
+.ant-layout-header {
+  background-color:#98FFE6
+  ;
+}
 .App-logo {
   height: 40vmin;
 }

@@ -27,6 +27,7 @@ import * as types from "./actions";
 
 const initialRestos = [];
 
+
 export function restosReducer(state = initialRestos, action) {
   switch (action.type) {
     case types.FETCH_RESTOS:
@@ -58,12 +59,30 @@ export function cityReducer(state = initialCityFetchState, action) {
 } 
 //Ask Samuel about this code
 
-// export const deleteRestos = restID => dispatch => {
-//   debugger;
-//   axiosWithAuth()
-//     .delete(restosApi + restID)
-//     .then(response => {
-//       dispatch(fetchRestos(response));
-//     })
-//     .catch(error => console.log(error.message));
-// };
+
+const initialDetail = {};
+export const restoDetailReducer = (state = initialDetail, action) => { 
+    switch(action.type) {
+        case types.FETCH_RESTOS_DETAILS: 
+            return{
+                ...state,
+                ...action.payload
+            } 
+            
+        default: 
+            return state;
+    }
+}
+        
+        // const initialCityFetchState= [];
+                
+        // export function cityReducer (state = initialCityFetchState, action) {
+        //     switch(action.type) {
+        //         case types.FETCH_CITY:
+        //             return [...state, 
+        //                 ...action.payload]
+                        
+        //         default: 
+        //             return state;
+        //     }
+        // }

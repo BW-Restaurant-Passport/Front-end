@@ -1,28 +1,64 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import "antd/dist/antd.css";
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 
-//scaffolding for navbar component
-//likely to refactored with antUI
-//we need a new name for the project other than restaurant passport 
+const { Header, Content, Sider } = Layout;
 
+const { SubMenu } = Menu;
 
 function Navbar () {
     return (
-      <div>
-        <nav>
-          <div>
-            <h1>Restaurant Passport</h1>
-            <img src="#" alt="."/>
-          </div>
-          <div>
-            <Link to="/">Home </Link>
-            <Link to="/login" >Login</Link>   
-            <Link to="">Showcase</Link>
-            <Link to="">Browse</Link>
-          </div>
-        </nav>
-      </div>
-    )
-  };
+
+<div className= "navbar">
+  <Layout>
+    <Header>
+
+    <Menu 
+      theme="dark"
+      mode="horizontal"
+      style={{ lineHeight: '64px',
+               fontSize : '20px',
+               backgroundColor: '#98FFE6', 
+               
+            }}
+            
+    
+    // #98FFE6
+    // #DAD3F4
+    >
+
+      < Menu.Item >  
+        <NavLink to="/">Restaurant Passport</NavLink>
+      </Menu.Item>
+    
+      <Menu.Item >  
+        <NavLink to="/login">Login</NavLink>
+      </Menu.Item>
+
+      <Menu.Item >  
+        <NavLink to="/restocard">Showcase</NavLink>
+      </Menu.Item>
+    
+      <Menu.Item >  
+        <NavLink to="/browse">Browse</NavLink>
+      </Menu.Item>
+
+      <Menu.Item>  
+        <NavLink to="/passport">Passport</NavLink>
+      </Menu.Item>
+          
+      <Menu.Item >  
+        <NavLink to="/signup">Log Out</NavLink>
+      </Menu.Item>
+    
+    </Menu>
+    </Header>
+  </Layout>
+</div>
+        
+      
+       )
+};
 
   export default Navbar;
