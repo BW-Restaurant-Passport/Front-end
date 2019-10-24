@@ -3,36 +3,26 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import * as yup from "yup";
 
-const Signup = (props) => {
+const Signup = props => {
   const initialValues = {
     username: "",
     email: "",
-    city: "",
+    // city: "",
     password: "",
-    passwordConfirm: ""
+    confirmPassword: "",
   };
 
-  //   const onSubmit = formValues => {
-  //     axios
-  //       .post(url, formValues)
-  //       .then(response => {
-  //         const token = response.data.payload;
-  //         localStorage.setItem("token", reponse.data.token);
-  //         props.history.push("/passport");
-  //       })
-  //       .catch(error => {
-  //         console.log(error.message);
-  //       });
-  //   };
 
   const signUpApi = "https://build-restaurant-passport.herokuapp.com/users/register";
 
   const onSubmit = formValues => {
+    const {confirmPassword, ...rest} = formValues
+    console.log('rest', rest);
     axios
-    .post(signUpApi, formValues)
-    .then(
-      props.history.push("/login")
-    )
+    .post(signUpApi, rest)
+    .then(() => {
+       props.history.push("/login")
+      })
     .catch(error => {
       console.log(error.message)
     })
@@ -40,7 +30,7 @@ const Signup = (props) => {
 
   const validationSchema = yup.object().shape({
     username: yup.string().required("Username required"),
-    city: yup.string().required("Please enter your city"),
+    // city: yup.string().required("Please enter your city"),
     email: yup
       .string()
       .email()
@@ -69,10 +59,10 @@ const Signup = (props) => {
               <Field name="username" type="text" placeholder="Username" />
               <ErrorMessage name="username" component="div" />
             </div>
-            <div>
+            {/* <div>
               <Field name="city" type="text" placeholder="City" />
               <ErrorMessage name="city" component="div" />
-            </div>
+            </div> */}
             <div>
               <Field name="email" type="email" placeholder="Email" />
               <ErrorMessage name="email" component="div" />

@@ -3,24 +3,20 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 
 
-export function RestoCard ({getCityData, city}) { 
+export function RestoCard ({resto, deleteResto, state }) { 
+  
 
-    useEffect(() => {
-        getCityData()
-    }, [])
 
     return (
-        <div className='restocard'>
+        <div className='restocard' resto={resto} key={resto.restID}>
             <div>
-                <button /*onClick={onHandleDelete}*/>X</button>
+                <button onClick={() => {deleteResto(state, resto.restID)}}>X</button>
             </div>
             <div>
-                <h1>{city.name}</h1>
+                <h4>{resto.restName}</h4>
+                <img href="#" alt="restaurant image" />
+                {/* <p onClick={onHandleStamp} >Add Stamp</p> */}
                 
-                <h1>Restaurant Name</h1>
-                <p>Description: </p> 
-                <p /*onClick={onHandleStamp}*/ >Add Stamp</p>
-                <img src='#' alt='img caption'/>
             </div>
         </div>
     )

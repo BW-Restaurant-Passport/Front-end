@@ -1,11 +1,12 @@
 import React from 'react';
 
-function RestoDetail ({restos}) { 
+export default function RestoDetail ({restos}) { 
 
     return (
         <div className="restoDetail">
             <h2>{restos.name}</h2>
             <p>{restos.description}</p>
+            <button>Add Stamp</button>
         </div>
     )
 }

@@ -1,6 +1,8 @@
 import * as types from "./actions";
 import axiosWithAuth from "../helpers/axiosWithAuth";
-// import thunk from "redux-thunk";
+import axios from "axios";
+
+import thunk from "redux-thunk";
 
 // const userApi = "";
 
@@ -18,46 +20,87 @@ import axiosWithAuth from "../helpers/axiosWithAuth";
 // //     }
 // // }
 
-// export const getUser = () => dispatch => {
-//   axiosWithAuth()
-//     .get(userApi)
-//     .then(response => {
-//       dispatch(setUserDetails(response.data));
-//     })
-//     .catch(error => {
-//       console.log(error.message);
-//     });
-// };
+const cityApi = "https://build-restaurant-passport.herokuapp.com/cities";
+const restosApi =
+  "https://build-restaurant-passport.herokuapp.com/cities/3/restaurants";
 
+const detailsApi =
+  "https://build-restaurant-passport.herokuapp.com/cities/restaurants/";
 
-const cityApi = 'https://build-restaurant-passport.herokuapp.com/cities';
-
-export function fetchCity (city) {
-    return {
-        type: types.FETCH_CITY,
-        payload: city
-    }
+export function fetchCity(city) {
+  return {
+    type: types.FETCH_CITY,
+    payload: city
+  };
 }
 
 export const getCityData = () => dispatch => {
-    
-    debugger
-    axiosWithAuth().get(cityApi)
+  debugger;
+  axiosWithAuth()
+    .get(cityApi)
     .then(response => {
-        const city = response.data;
-        console.log('dddd', city);
-        
-        dispatch(fetchCity(city))
+      const city = response.data;
+      console.log("dddd", city);
+
+      dispatch(fetchCity(city));
     })
-    .catch(error => { 
-        console.log('Error', error)
-    })    
+    .catch(error => {
+      console.log("Error", error);
+    });
+};
+
+export function fetchRestos(restos) {
+  return {
+    type: types.FETCH_RESTOS,
+    payload: restos
+    // payload: { ...restos, restoDetails: {...restos, isDeleted: false, isVisited: false} }
+  };
 }
 
+// export function fetchDetail(restID) {
+//   return{
+//     type: types.FETCH_DETAIL,
+//     payload: {...restoDetails, isVisited: false}
+//   }
+// }
 
-// export function fetchRestos (resto) {
-//     return {
-//         type: types.FETCH_RESTOS,
-//         payload: restos
-//     }
+export const getRestos = restosApi => dispatch => {
+  axiosWithAuth()
+    .get(restosApi)
+    .then(response => {
+      const restos = response.data;
+      dispatch(fetchRestos(restos));
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+};
+
+// export const deleteRestos = restID => dispatch => {
+//   debugger;
+//   axiosWithAuth()
+//     .delete(restosApi + restID)
+//     .then(response => {
+//       dispatch(fetchRestos(response));
+//     })
+//     .catch(error => console.log(error.message));
+// };
+
+export const deleteResto = (state, id) => {
+  
+  const newRestos = state.restaurants.filter(resto => resto.restID !== id);
+
+  return {
+    type: types.DELETE_RESTO,
+    payload: newRestos
+  };
+};
+
+// export const renderDetail = restID => dispatch => {
+// axiosWithAuth()
+// .get(detailsApi + restID)
+// .then(response => {
+//   dispatch(fetchDetail(response));
+// })
+// .catch(error => console.log('detail fetching error'));
 // }

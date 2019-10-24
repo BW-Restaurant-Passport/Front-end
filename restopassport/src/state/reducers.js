@@ -1,6 +1,5 @@
 import * as types from "./actions";
 
-
 // const initialValueCount = 0;
 // export function countReducer(count = initialValueCount, action) {
 //   switch (action.type) {
@@ -15,7 +14,6 @@ import * as types from "./actions";
 //   }
 // }
 
-
 // const initialUserDetails = { username: "", password: "" };
 
 // export function userReducer(state = initialUserDetails, action) {
@@ -27,32 +25,45 @@ import * as types from "./actions";
 //   }
 // }
 
-const initialRestosFetchState = [];
+const initialRestos = [];
 
-export function restosReducer (state= initialRestosFetchState, action) { 
-    switch(action.type){
-        case types.FETCH_RESTOS: 
-        return [...state,
-            ...action.payload]
-            
-            default: 
-            return state;
-        }
-    }
+export function restosReducer(state = initialRestos, action) {
+  switch (action.type) {
+    case types.FETCH_RESTOS:
+      return action.payload;
+      // case types.FETCH_DETAIL:
+      // return action.payload;
+      case types.DELETE_RESTO:
+      return {
+        ...state,
+        restaurants: action.payload
+      }
+      // state.filter((data, i) => i !== action.id);
     
-const initialCityFetchState= [];
-
-export function cityReducer (state = initialCityFetchState, action) {
-    switch(action.type) {
-        case types.FETCH_CITY:
-            return [...state, 
-                ...action.payload]
-                
-                default: 
-                return state;
-    }
+    default:
+      return state;
+  }
 }
-   
 
-        
-        
+const initialCityFetchState = [];
+
+export function cityReducer(state = initialCityFetchState, action) {
+  switch (action.type) {
+    case types.FETCH_CITY:
+      return [...state, ...action.payload];
+
+    default:
+      return state;
+  }
+} 
+//Ask Samuel about this code
+
+// export const deleteRestos = restID => dispatch => {
+//   debugger;
+//   axiosWithAuth()
+//     .delete(restosApi + restID)
+//     .then(response => {
+//       dispatch(fetchRestos(response));
+//     })
+//     .catch(error => console.log(error.message));
+// };
