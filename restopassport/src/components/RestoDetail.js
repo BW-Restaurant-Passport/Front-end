@@ -14,6 +14,9 @@ export  function RestoDetail ({getRestosDetails, restoDetailsTwo}) {
             <h1>{restoDetailsTwo.address}</h1>
             <h1>{restoDetailsTwo.city}</h1>
             <h1>{restoDetailsTwo.description}</h1>
+            {/* <h2>{restos.name}</h2> */}
+            {/* <p>{restos.description}</p>
+            <button>Add Stamp</button> */}
         </div>
     )
 }
