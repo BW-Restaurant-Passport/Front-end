@@ -1,37 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 
-export  function RestoDetail ({restoDetailsTwo,
-    restos, getRestosDetails
-    }) { 
-
+export  function RestoDetail ({getRestosDetails, restoDetailsTwo}) { 
     useEffect(() => {
-        getRestosDetails()
+     getRestosDetails();
+
     },[])
 
     return (
-       
         <div className="restoDetail">
-            <h1>{restos.name}</h1>
-            <h2>{restos.description}</h2>
-            {/* {restos.map(resto => (
-            <RestoProfile key={resto.id}
-            resto={resto}/>
-        ))}              */}
+            <h1>{restoDetailsTwo.name}</h1>
+            <h1>{restoDetailsTwo.address}</h1>
+            <h1>{restoDetailsTwo.city}</h1>
+            <h1>{restoDetailsTwo.description}</h1>
         </div>
-
     )
 }
-
-// export function RestoProfile ({resto}) {
-//     return(
-//         <div>
-//         <h1>{resto.name}</h1>
-//         <h2>{resto.description}</h2>
-//         </div>
-//         )
-// }
 
 export default connect(state => state,
 actionCreators) (RestoDetail);

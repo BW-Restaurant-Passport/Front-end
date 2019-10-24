@@ -38,14 +38,15 @@ export function restosReducer (state = initialRestos, action) {
 }
             
 
-const initialDetail = [];
+const initialDetail = {};
 export const restoDetailReducer = (state = initialDetail, action) => { 
     switch(action.type) {
         case types.FETCH_RESTOS_DETAILS: 
-            return [
+            return{
                 ...state,
                 ...action.payload
-            ]
+            } 
+            
         default: 
             return state;
     }
