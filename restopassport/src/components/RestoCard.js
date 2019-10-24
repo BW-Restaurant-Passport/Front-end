@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 
 
-export function RestoCard ({resto, deleteRestos}) { 
+export function RestoCard ({resto, deleteRestos, getRestosDetails}) { 
    
 
 
@@ -12,6 +12,9 @@ export function RestoCard ({resto, deleteRestos}) {
             <div>
                 <button onClick={() => {deleteRestos(resto.restID)}}>X</button>
             </div>
+            <div>
+                <button onClick={ () => {getRestosDetails(resto.restID)}}>GET DETAILS</button>
+            </div> 
             <div>
                 <h4>{resto.restName}</h4>
                 <img href="#" alt="restaurant image" />

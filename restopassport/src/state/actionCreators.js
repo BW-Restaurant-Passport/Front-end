@@ -65,9 +65,11 @@ export function fetchRestosDetails (restos) {
   }
 };
 
-export const getRestosDetails = () => dispatch => {
+export const getRestosDetails = (restID) => dispatch => {
+
   debugger
-  axiosWithAuth().get(`https://build-restaurant-passport.herokuapp.com/cities/restaurants/3`)
+  axiosWithAuth().get(`https://build-restaurant-passport.herokuapp.com/cities/restaurants${restID}`)
+
   .then( response => {
      
     const restos = response.data;

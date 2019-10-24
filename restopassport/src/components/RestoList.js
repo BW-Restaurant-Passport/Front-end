@@ -11,7 +11,6 @@ const restosApi = "https://build-restaurant-passport.herokuapp.com/cities/3/rest
 
 
 export function RestoList ({restoDetails, getRestos}) {
-  console.log('hey', restoDetails);
     
     useEffect(() => {
         getRestos(restosApi);

@@ -20,6 +20,7 @@ function Navbar () {
       style={{ lineHeight: '64px',
                fontSize : '20px',
                backgroundColor: '#98FFE6', 
+               
             }}
             
     
