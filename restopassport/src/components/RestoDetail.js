@@ -6,6 +6,7 @@ export default function RestoDetail ({restos}) {
         <div className="restoDetail">
             <h2>{restos.name}</h2>
             <p>{restos.description}</p>
+            <button>Add Stamp</button>
         </div>
     )
 }

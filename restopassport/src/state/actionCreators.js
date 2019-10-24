@@ -24,6 +24,9 @@ const cityApi = "https://build-restaurant-passport.herokuapp.com/cities";
 const restosApi =
   "https://build-restaurant-passport.herokuapp.com/cities/3/restaurants";
 
+const detailsApi =
+  "https://build-restaurant-passport.herokuapp.com/cities/restaurants/";
+
 export function fetchCity(city) {
   return {
     type: types.FETCH_CITY,
@@ -49,10 +52,17 @@ export const getCityData = () => dispatch => {
 export function fetchRestos(restos) {
   return {
     type: types.FETCH_RESTOS,
-    payload: { ...restos, restoDetails: {...restos, isDeleted: false, isVisited: false} }
-    
+    payload: restos
+    // payload: { ...restos, restoDetails: {...restos, isDeleted: false, isVisited: false} }
   };
 }
+
+// export function fetchDetail(restID) {
+//   return{
+//     type: types.FETCH_DETAIL,
+//     payload: {...restoDetails, isVisited: false}
+//   }
+// }
 
 export const getRestos = restosApi => dispatch => {
   axiosWithAuth()
@@ -75,3 +85,22 @@ export const getRestos = restosApi => dispatch => {
 //     })
 //     .catch(error => console.log(error.message));
 // };
+
+export const deleteResto = (restos, id) => {
+  console.log("restos", restos, "id", id);
+  const newRestos = restos.restaurants.filter(resto => resto.restID !== id);
+  console.log(newRestos);
+  return {
+    type: types.DELETE_RESTO,
+    payload: newRestos
+  };
+};
+
+// export const renderDetail = restID => dispatch => {
+// axiosWithAuth()
+// .get(detailsApi + restID)
+// .then(response => {
+//   dispatch(fetchDetail(response));
+// })
+// .catch(error => console.log('detail fetching error'));
+// }

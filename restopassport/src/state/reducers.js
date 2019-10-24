@@ -30,8 +30,13 @@ const initialRestos = [];
 export function restosReducer(state = initialRestos, action) {
   switch (action.type) {
     case types.FETCH_RESTOS:
-   
       return action.payload;
+      // case types.FETCH_DETAIL:
+      // return action.payload;
+      case types.DELETE_RESTO:
+      return action.payload;
+      // state.filter((data, i) => i !== action.id);
+    
     default:
       return state;
   }
@@ -47,7 +52,8 @@ export function cityReducer(state = initialCityFetchState, action) {
     default:
       return state;
   }
-}
+} 
+//Ask Samuel about this code
 
 // export const deleteRestos = restID => dispatch => {
 //   debugger;
