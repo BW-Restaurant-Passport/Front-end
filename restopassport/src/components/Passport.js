@@ -12,7 +12,7 @@ const Passport = props => {
     <div>
       <h3>My Passport</h3>
       {/* <h3>Current City: `${props.city}`</h3> */}
-      <RestoList />
+      <RestoList {...props}/>
       <div>
           
       </div>
