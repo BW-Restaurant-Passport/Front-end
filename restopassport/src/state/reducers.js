@@ -34,7 +34,10 @@ export function restosReducer(state = initialRestos, action) {
       // case types.FETCH_DETAIL:
       // return action.payload;
       case types.DELETE_RESTO:
-      return action.payload;
+      return {
+        ...state,
+        restaurants: action.payload
+      }
       // state.filter((data, i) => i !== action.id);
     
     default:

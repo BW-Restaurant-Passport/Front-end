@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 
 
-export function RestoCard ({resto, deleteResto, restoDetails }) { 
-   console.log(restoDetails.restaurants);
+export function RestoCard ({resto, deleteResto, state }) { 
+  
 
 
     return (
         <div className='restocard' resto={resto} key={resto.restID}>
             <div>
-                <button onClick={() => {deleteResto(restoDetails, resto.restID)}}>X</button>
+                <button onClick={() => {deleteResto(state, resto.restID)}}>X</button>
             </div>
             <div>
                 <h4>{resto.restName}</h4>

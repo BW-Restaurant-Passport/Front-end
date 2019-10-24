@@ -86,10 +86,10 @@ export const getRestos = restosApi => dispatch => {
 //     .catch(error => console.log(error.message));
 // };
 
-export const deleteResto = (restos, id) => {
-  console.log("restos", restos, "id", id);
-  const newRestos = restos.restaurants.filter(resto => resto.restID !== id);
-  console.log(newRestos);
+export const deleteResto = (state, id) => {
+  
+  const newRestos = state.restaurants.filter(resto => resto.restID !== id);
+
   return {
     type: types.DELETE_RESTO,
     payload: newRestos
