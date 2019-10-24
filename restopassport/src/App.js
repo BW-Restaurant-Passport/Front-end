@@ -5,7 +5,7 @@ import Signup from "./components/Signup";
 import PrivateRoute from "./helpers/PrivateRoute";
 import Passport from "./components/Passport";
 import Navbar from "./components/Navbar";
-// import RestoCard from "./components/RestoCard";
+import RestoDetail from "./components/RestoDetail"
 
 import "./App.css";
 function App() {
@@ -16,6 +16,7 @@ function App() {
       <Route exact path="/login" component={Login} />
       {/* <Route exact path="/signup" component={Signup} /> */}
       <Signup />
+      <Route  path="/restodetail" component={RestoDetail}/>
       <PrivateRoute exact path="/passport" component={Passport} />
       {/* <Counter /> */}
     </div>

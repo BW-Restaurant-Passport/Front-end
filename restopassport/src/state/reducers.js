@@ -36,22 +36,33 @@ export function restosReducer (state = initialRestos, action) {
         return action.payload;  
             default: 
             return state;
+
     }
 }
             
-const initialCityFetchState= [];
-        
-export function cityReducer (state = initialCityFetchState, action) {
+
+const initialDetail = [];
+export const restoDetailReducer = (state = initialDetail, action) => { 
     switch(action.type) {
-        case types.FETCH_CITY:
-            return [...state, 
-                ...action.payload]
-                
+        case types.FETCH_RESTOS_DETAILS: 
+            return [
+                ...state,
+                ...action.payload
+            ]
         default: 
             return state;
     }
 }
-   
-
         
-        
+        // const initialCityFetchState= [];
+                
+        // export function cityReducer (state = initialCityFetchState, action) {
+        //     switch(action.type) {
+        //         case types.FETCH_CITY:
+        //             return [...state, 
+        //                 ...action.payload]
+                        
+        //         default: 
+        //             return state;
+        //     }
+        // }

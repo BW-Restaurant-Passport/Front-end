@@ -1,7 +1,11 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import "antd/dist/antd.css";
+import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 
+const { Header, Content, Sider } = Layout;
 
+const { SubMenu } = Menu;
 
 function Navbar () {
     return (
@@ -11,10 +15,11 @@ function Navbar () {
     <Header>
 
     <Menu 
-      theme="light"
+      theme="dark"
       mode="horizontal"
       style={{ lineHeight: '64px',
       'font-size' : '32px',
+      // 'background-color': 'blue'
       
     }}
     >
