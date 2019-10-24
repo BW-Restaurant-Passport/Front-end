@@ -1,6 +1,6 @@
 import * as types from "./actions";
 import axiosWithAuth from "../helpers/axiosWithAuth";
-import axios from 'axios';
+import axios from "axios";
 
 import thunk from "redux-thunk";
 
@@ -39,7 +39,6 @@ const restosDetailApi = "https://build-restaurant-passport.herokuapp.com/cities/
 export function fetchRestos(restos){
     return {
         type: types.FETCH_RESTOS,
-        // payload: restos,
         payload: {...restos, restoDetails: {...restos, isDeleted: false,}}
     }
 }

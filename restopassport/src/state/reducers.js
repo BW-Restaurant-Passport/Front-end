@@ -1,6 +1,5 @@
 import * as types from "./actions";
 
-
 // const initialValueCount = 0;
 // export function countReducer(count = initialValueCount, action) {
 //   switch (action.type) {
@@ -15,7 +14,6 @@ import * as types from "./actions";
 //   }
 // }
 
-
 // const initialUserDetails = { username: "", password: "" };
 
 // export function userReducer(state = initialUserDetails, action) {
@@ -26,7 +24,6 @@ import * as types from "./actions";
 //       return initialUserDetails;
 //   }
 // }
-
 
 const initialRestos = [];
 

@@ -2,19 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 
-export function Counter(props) {
-  // `count` comes from the state of the app
-  // `increment` is an action creator
-  // THE GOODIES COME FROM PROPS!!!!! YOU WILL FORGET THIS
-  const { count, increment, decrement } = props;
-  return (
-    <div className='component'>
-      The count is {count}
-      <button onClick={increment}>increment</button>
-      <button onClick={decrement}>decrement</button>
-    </div>
-  );
-}
+// export function Counter(props) {
+//   // `count` comes from the state of the app
+//   // `increment` is an action creator
+//   // THE GOODIES COME FROM PROPS!!!!! YOU WILL FORGET THIS
+//   const { count, increment, decrement } = props;
+//   return (
+//     <div className='component'>
+//       The count is {count}
+//       <button onClick={increment}>increment</button>
+//       <button onClick={decrement}>decrement</button>
+//     </div>
+//   );
+// }
 
 // `connect` PLUGS THE APP STATE AND THE ACTION CREATORS
 // INTO THE COMPONENT!!! (through its props)
