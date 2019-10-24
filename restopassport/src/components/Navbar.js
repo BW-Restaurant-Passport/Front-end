@@ -18,18 +18,17 @@ function Navbar () {
       theme="dark"
       mode="horizontal"
       style={{ lineHeight: '64px',
-      'font-size' : '32px',
-      // 'background-color': 'blue'
-      
-    }}
+               fontSize : '20px',
+               backgroundColor: '#98FFE6', 
+            }}
+            
+    
+    // #98FFE6
+    // #DAD3F4
     >
 
       < Menu.Item >  
         <NavLink to="/">Restaurant Passport</NavLink>
-      </Menu.Item>
-    
-      <Menu.Item >  
-        <NavLink to="/signup">Sign Up</NavLink>
       </Menu.Item>
     
       <Menu.Item >  
@@ -48,6 +47,10 @@ function Navbar () {
         <NavLink to="/passport">Passport</NavLink>
       </Menu.Item>
           
+      <Menu.Item >  
+        <NavLink to="/signup">Log Out</NavLink>
+      </Menu.Item>
+    
     </Menu>
     </Header>
   </Layout>

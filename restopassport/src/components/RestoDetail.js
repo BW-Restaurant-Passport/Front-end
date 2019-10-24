@@ -13,8 +13,9 @@ export  function RestoDetail ({restoDetailsTwo,
     return (
        
         <div className="restoDetail">
-        {restos}
-        {/* {restos.map(resto => (
+            <h1>{restos.name}</h1>
+            <h2>{restos.description}</h2>
+            {/* {restos.map(resto => (
             <RestoProfile key={resto.id}
             resto={resto}/>
         ))}              */}
@@ -23,14 +24,14 @@ export  function RestoDetail ({restoDetailsTwo,
     )
 }
 
-export function RestoProfile ({resto}) {
-    return(
-        <div>
-        <h1>{resto.name}</h1>
-        <h2>{resto.description}</h2>
-        </div>
-        )
-}
+// export function RestoProfile ({resto}) {
+//     return(
+//         <div>
+//         <h1>{resto.name}</h1>
+//         <h2>{resto.description}</h2>
+//         </div>
+//         )
+// }
 
 export default connect(state => state,
 actionCreators) (RestoDetail);
