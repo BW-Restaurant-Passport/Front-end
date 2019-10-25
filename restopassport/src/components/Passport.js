@@ -1,8 +1,10 @@
 import React from "react";
-// import axiosWithAuth from "../helpers/axiosWithAuth";
 import * as actionCreators from "../state/actionCreators";
 import { connect } from "react-redux";
 import RestoList from "./RestoList";
+import { Typography } from 'antd';
+
+const { Title } = Typography;
 
 const Passport = props => {
     // actionCreators.getUser();
@@ -10,7 +12,7 @@ const Passport = props => {
 
   return (
     <div>
-      <h3>My Passport</h3>
+      <Title  level={3} > My Passport </Title>
       {/* <h3>Current City: `${props.city}`</h3> */}
       <RestoList />
       <div>

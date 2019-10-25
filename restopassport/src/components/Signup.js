@@ -1,15 +1,63 @@
 import React from "react";
-// import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import { Formik, Form, Field, ErrorMessage } from "formik";
+
+import { Route, NavLink, withRouter, Redirect } from 'react-router-dom';
+import { Form, Formik, Field, ErrorMessage } from "formik";
+
+
 import Login from './Login'
 import axios from "axios";
 import * as yup from "yup";
+import { Typography } from 'antd';
+import styled from 'styled-components';
 
+
+const { Title } = Typography;
+
+const StyledForm = styled(Form) `
+  padding-left: 35%;
+`
+;
+
+const StyledInput = styled(Field)`
+padding: 1rem;
+font-size: 16px;
+width: 50%;
+display: block;
+align: center;
+text-align: center;
+vertical-align: middle;
+border-radius: 4px;
+border: 1px solid #ccc;
+`
+;
+
+const StyledButton = styled.button`
+padding: 1rem;
+font-size: 16px;
+width: 50%;
+display: block;
+align: center;
+text-align: center;
+vertical-align: middle;
+border-radius: 4px;
+border: 1px solid #ccc;
+`
+
+const StyledLoginButton = styled.button`
+padding: 1rem;
+font-size: 16px;
+width: 50%;
+display: block;
+align: center;
+text-align: center;
+vertical-align: middle;
+border-radius: 4px;
+border: 1px solid #ccc;
+`
 const Signup = props => {
   const initialValues = {
     username: "",
     email: "",
-    // city: "",
     password: "",
     confirmPassword: "",
   };
@@ -32,7 +80,6 @@ const Signup = props => {
 
   const validationSchema = yup.object().shape({
     username: yup.string().required("Username required"),
-    // city: yup.string().required("Please enter your city"),
     email: yup
       .string()
       .email()
@@ -48,44 +95,62 @@ const Signup = props => {
       .required("Please confirm password")
   });
 
+  const onDirect= () => {
+
+    props.history.replace('/login');
+  }
+
   return (
     <>
-      <h1>Sign Up</h1>
+      <Title  level={1}>Sign Up</Title>
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
         render={props => (
 
-        // <Form className="login-form">
-          <Form>
+          <StyledForm>
+
             <div>
-                <Field name="username" type="text" placeholder="Username" />
+                <StyledInput name="username" type="text" placeholder="Username" />
+
                 <ErrorMessage name="username" component="div" />
             </div>
+        
+
             {/* <div>
               <Field name="city" type="text" placeholder="City" />
               <ErrorMessage name="city" component="div" />
             </div> */}
             <div>
-              <Field name="email" type="email" placeholder="Email" />
+              <StyledInput name="email" type="email" placeholder="Email" />
               <ErrorMessage name="email" component="div" />
             </div>
+
             <div>
-              <Field name="password" type="password" placeholder="Password" />
+              <StyledInput name="password" type="password" placeholder="Password" />
               <ErrorMessage name="password" component="div" />
             </div>
+
             <div>
-              <Field
+              <StyledInput
                 name="confirmPassword"
                 type="password"
                 placeholder="Confirm Password"
-              />
+                />
               <ErrorMessage name="confirmPassword" component="div" />
             </div>
-            <button type="submit">Sign Up</button>
-          </Form>
-        // </Form>
+
+  
+             <StyledButton type="submit">Sign Up</StyledButton>
+            <br></br>
+            <br></br>
+
+        <StyledButton onClick={onDirect}>
+          Log In
+        </StyledButton>
+          </StyledForm>
+
         )}
       />
 
