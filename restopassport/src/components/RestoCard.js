@@ -22,7 +22,8 @@ const content = (
 
 const StyledGrid = styled.div`
 display: flex,
-flex-direction: column
+flex-direction: column,
+justify-content: space-even,
 align-text: center
 `
 
@@ -77,6 +78,8 @@ export function RestoCard (props
             <br></br>
 
             <div>
+                <div>
+
                 <Button
                  type="primary"
                  >
@@ -87,12 +90,15 @@ export function RestoCard (props
                 >
                 {resto.restName}
                 </Title>
+            </div>
+
+            <div>
 
             <Card
                 hoverable
                 style={{ width: 240 }}
                 cover={<img alt="fancy restaurant" src="https://i.imgur.com/qADbN1P.jpg" />}
-            >
+                >
                 <Meta 
                 title="Italian Restaurant"
                 description="finest restaurant in Florida"
@@ -103,9 +109,9 @@ export function RestoCard (props
                 {/* <p onClick={onHandleStamp} >Add Stamp</p> */}
                 
             </div>
+
+            </div>
         </StyledGrid>
-
-
     )
 }
 
