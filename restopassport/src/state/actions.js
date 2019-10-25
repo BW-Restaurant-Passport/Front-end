@@ -17,3 +17,4 @@ export const FETCH_USER = 'FETCH_USER';  //there seems to be no way to fetch use
 export const FETCH_DETAIL = 'FETCH_DETAIL';
 
 
+

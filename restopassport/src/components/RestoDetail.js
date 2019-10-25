@@ -2,15 +2,14 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../state/actionCreators';
 
-import { Typography } from 'antd';
+import { Typography, Button } from 'antd';
 import { Descriptions } from 'antd';
 
 const { Title } = Typography;
 
 export function RestoDetail ({getRestosDetails, restoDetailsTwo}) {
     useEffect(() => {
-     getRestosDetails();
-
+     getRestosDetails(restoDetailsTwo.id);
     },[])
 
     return (
@@ -24,9 +23,15 @@ export function RestoDetail ({getRestosDetails, restoDetailsTwo}) {
             <Title  level={1}>{restoDetailsTwo.city}</Title>
             <Title  level={1}>{restoDetailsTwo.description}</Title>
             {/* <h2>{restos.name}</h2> */}
-            {/* <p>{restos.description}</p>
-            <button>Add Stamp</button> */}
-    </Descriptions>
+            {/* <p>{restos.description}</p> */}
+        </Descriptions>
+        <button 
+            style={{ border: '1px solid black', backgroundColor: 'red'}}
+            onClick={e => {
+                debugger
+                return document.querySelector('div .restoDetail').classList.toggle('visited')
+            }}
+        >Add Stamp</button>
     </div>
 
     )

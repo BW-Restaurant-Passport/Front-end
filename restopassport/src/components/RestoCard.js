@@ -21,10 +21,10 @@ const content = (
 
 
 const StyledGrid = styled.div`
-display: flex,
-flex-direction: column,
-justify-content: space-even,
-align-text: center
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+text-align: center;
 `
 
 
@@ -33,7 +33,7 @@ export function RestoCard (props
     const{resto, deleteResto, state , getRestosDetails} = props;
     
     const onRedirectToRestoDetail = () => {
-        props.history.replace('/restodetail');
+        props.history.push('/restodetail');
 
     }
 
@@ -63,12 +63,17 @@ export function RestoCard (props
             >
                 <Button
                 theme="dark"
-                onClick={ () => 
-                {getRestosDetails(
-                    resto.restID
-                    )}
-                }
-                onClick={onRedirectToRestoDetail}
+                // onClick={ 
+                //     () => {
+                //         debugger
+                //         getRestosDetails(resto.restID)
+                //     }
+                // }
+                onClick={() => {
+                            onRedirectToRestoDetail();
+                            getRestosDetails(resto.restID);
+                        }
+                    }
                     >
                 GET DETAILS
                 </Button>
