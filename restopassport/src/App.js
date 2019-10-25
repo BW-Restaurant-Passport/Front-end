@@ -6,9 +6,9 @@ import PrivateRoute from "./helpers/PrivateRoute";
 import Passport from "./components/Passport";
 import Navbar from "./components/Navbar";
 import RestoDetail from "./components/RestoDetail"
-import "./App.css";
 import { Typography } from 'antd';
 import { Layout } from 'antd';
+import "./App.css";
 
 const { Title } = Typography;
 const { Header, Footer, Sider, Content } = Layout;
@@ -17,7 +17,7 @@ function App() {
   return (
 <div className="App">
 
-<RestoDetail/>
+ {/* <RestoDetail/> */}
 <Layout>
   
   <Header>
@@ -27,9 +27,13 @@ function App() {
 <Layout>
 
   <Content>
+    
     <Route exact path="/" component={Signup} />
+    
     <Route exact path="/login" component={Login} />
-    {/* <Route  path="/restodetail" component={RestoDetail}/> */}
+    {/* <Route exact path="/restodetail" component={RestoDetail} /> */}
+
+    <Route  path="/restodetail" component={RestoDetail}/>
     <PrivateRoute exact path="/passport" component={Passport} />
   
   </Content>

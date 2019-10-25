@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, NavLink, withRouter, Redirect } from 'react-router-dom';
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import Login from './Login'
 import axios from "axios";
@@ -38,6 +39,18 @@ vertical-align: middle;
 border-radius: 4px;
 border: 1px solid #ccc;
 `
+
+const StyledLoginButton = styled.button`
+padding: 1rem;
+font-size: 16px;
+width: 50%;
+display: block;
+align: center;
+text-align: center;
+vertical-align: middle;
+border-radius: 4px;
+border: 1px solid #ccc;
+`
 const Signup = props => {
   const initialValues = {
     username: "",
@@ -64,7 +77,6 @@ const Signup = props => {
 
   const validationSchema = yup.object().shape({
     username: yup.string().required("Username required"),
-    // city: yup.string().required("Please enter your city"),
     email: yup
       .string()
       .email()
@@ -79,6 +91,11 @@ const Signup = props => {
       .oneOf([yup.ref("password"), null], "Passwords must match")
       .required("Please confirm password")
   });
+
+  const onDirect= () => {
+
+    props.history.replace('/login');
+  }
 
   return (
     <>
@@ -121,6 +138,12 @@ const Signup = props => {
             </div>
   
              <StyledButton type="submit">Sign Up</StyledButton>
+            <br></br>
+            <br></br>
+
+        <StyledButton onClick={onDirect}>
+          Log In
+        </StyledButton>
           </StyledForm>
         )}
       />

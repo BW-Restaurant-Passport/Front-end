@@ -17,19 +17,23 @@ function Navbar () {
   return (
 
   <div className= "navbar">
-    <Layout>
+    <Layout className="logo">
       <Header>
+      <div className='logo'>
+        
 
       <Menu 
         theme="dark"
         mode="horizontal"
         style={{ lineHeight: '64px',
-                fontSize : '20px',
-                backgroundColor: '#44b39c',          
-              }}
+        fontSize : '20px',
+        backgroundColor: '#44b39c',          
+      }}
+      defaultSelectedKeys={['1']}
+      
       >
 
-        < Menu.Item >  
+        < Menu.Item key="1">  
          <NavLink to="/">Restaurant Passport</NavLink>
         </Menu.Item>
     
@@ -38,7 +42,7 @@ function Navbar () {
         </Menu.Item>
 
        <Menu.Item >  
-          <NavLink to="/restocard">Showcase</NavLink>
+          <NavLink to="/restodetail">Showcase</NavLink>
         </Menu.Item>
     
         <Menu.Item >  
@@ -55,10 +59,18 @@ function Navbar () {
     
     </Menu>
 
+      </div>
     </Header>
   </Layout>
 </div>  
        )
 };
 
+// #components-layout-demo-top .logo {
+//   width: 120px;
+//   height: 31px;
+//   background: rgba(255, 255, 255, 0.2);
+//   margin: 16px 24px 16px 0;
+//   float: left;
+// }
   export default Navbar;
