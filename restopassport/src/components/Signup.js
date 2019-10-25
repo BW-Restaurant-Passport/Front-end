@@ -1,6 +1,9 @@
 import React from "react";
+
 import { Route, NavLink, withRouter, Redirect } from 'react-router-dom';
 import { Form, Formik, Field, ErrorMessage } from "formik";
+
+
 import Login from './Login'
 import axios from "axios";
 import * as yup from "yup";
@@ -110,6 +113,7 @@ const Signup = props => {
 
             <div>
                 <StyledInput name="username" type="text" placeholder="Username" />
+
                 <ErrorMessage name="username" component="div" />
             </div>
         
@@ -136,6 +140,7 @@ const Signup = props => {
                 />
               <ErrorMessage name="confirmPassword" component="div" />
             </div>
+
   
              <StyledButton type="submit">Sign Up</StyledButton>
             <br></br>
@@ -145,6 +150,7 @@ const Signup = props => {
           Log In
         </StyledButton>
           </StyledForm>
+
         )}
       />
 

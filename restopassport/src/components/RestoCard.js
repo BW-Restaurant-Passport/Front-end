@@ -17,11 +17,15 @@ const content = (
 );
 
 
+
+
+
 const StyledGrid = styled.div`
 display: flex,
 flex-direction: column
 align-text: center
 `
+
 
 export function RestoCard (props
     ) { 
@@ -31,6 +35,9 @@ export function RestoCard (props
         props.history.replace('/restodetail');
 
     }
+
+
+
     return (
 
         <StyledGrid className='restocard' resto={resto} key={resto.restID}>
@@ -48,6 +55,7 @@ export function RestoCard (props
             <br></br>
 
             <div>
+
             <Popover
                 content={content} 
                 title="Reviews"
@@ -90,6 +98,8 @@ export function RestoCard (props
                 description="finest restaurant in Florida"
                 />
             </Card>
+
+
                 {/* <p onClick={onHandleStamp} >Add Stamp</p> */}
                 
             </div>

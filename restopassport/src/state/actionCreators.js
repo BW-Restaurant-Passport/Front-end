@@ -20,6 +20,7 @@ import thunk from "redux-thunk";
 // //     }
 // // }
 
+
 // export const getUser = () => dispatch => {
 //   axiosWithAuth()
 //     .get(userApi)
@@ -30,6 +31,7 @@ import thunk from "redux-thunk";
 //       console.log(error.message);
 //     });
 // };
+
 const cityApi = "https://build-restaurant-passport.herokuapp.com/cities";
 const restosApi =
   "https://build-restaurant-passport.herokuapp.com/cities/3/restaurants";
@@ -49,6 +51,7 @@ export function fetchCity(city) {
 const restosDetailApi = "https://build-restaurant-passport.herokuapp.com/cities/restaurants/3";
 
 
+
 export function fetchRestos(restos) {
   return {
     type: types.FETCH_RESTOS,
@@ -66,7 +69,7 @@ export function fetchRestos(restos) {
 
 export const getRestos = restosApi => dispatch => {
   axiosWithAuth()
-    .get(restosApi)
+    .get(restosDetailApi)
     .then(response => {
         const restos = response.data;
         dispatch(fetchRestos(restos));
@@ -75,6 +78,7 @@ export const getRestos = restosApi => dispatch => {
         console.log(error.message);
     })
 }
+
 
 
 //actionCreators to fetch details on RESTOS
@@ -86,6 +90,7 @@ export function fetchRestosDetails (restos) {
   }
 };
 
+
 export const getRestosDetails = (restID) => dispatch => {
 
   axiosWithAuth().get(`https://build-restaurant-passport.herokuapp.com/cities/restaurants/${restID}`)
@@ -93,6 +98,8 @@ export const getRestosDetails = (restID) => dispatch => {
   .then( response => {
     const restos = response.data;
     console.log('weeknd', restos )
+
+
     dispatch(fetchRestosDetails(restos))
   }
   )
@@ -152,6 +159,7 @@ export const getRestosDetails = (restID) => dispatch => {
   // }
   
   
+
 // export const deleteRestos = restID => dispatch => {
 //   debugger;
 //   axiosWithAuth()

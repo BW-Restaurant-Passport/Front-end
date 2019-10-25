@@ -6,8 +6,10 @@ import PrivateRoute from "./helpers/PrivateRoute";
 import Passport from "./components/Passport";
 import Navbar from "./components/Navbar";
 import RestoDetail from "./components/RestoDetail"
+
 import { Typography } from 'antd';
 import { Layout } from 'antd';
+
 import "./App.css";
 
 const { Title } = Typography;
@@ -15,6 +17,7 @@ const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
   return (
+
 <div className="App">
 
  {/* <RestoDetail/> */}
@@ -42,6 +45,7 @@ function App() {
 
 </Layout>
   </div>
+
   );
 }
 

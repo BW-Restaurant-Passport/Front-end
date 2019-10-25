@@ -27,6 +27,7 @@ import * as types from "./actions";
 
 const initialRestos = [];
 
+
 export function restosReducer(state = initialRestos, action) {
   switch (action.type) {
     case types.FETCH_RESTOS:
@@ -57,6 +58,7 @@ export function cityReducer(state = initialCityFetchState, action) {
   }
 } 
 
+
 const initialDetail = {};
 export const restoDetailReducer = (state = initialDetail, action) => { 
     switch(action.type) {
@@ -70,3 +72,4 @@ export const restoDetailReducer = (state = initialDetail, action) => {
             return state;
     }
 }
+

@@ -4,6 +4,7 @@
   text-align: center;
 }
 
+
 #components-layout-demo-top .logo {
   width: 120px;
   height: 31px;
@@ -11,12 +12,17 @@
   margin: 16px 24px 16px 0;
   float: left;
 }
+
+
 .navbar {
   font-size: 4rem;
 }
 
 .ant-layout-header {
+
   background-color:#44b39c
+
+
   ;
 }
 .App-logo {

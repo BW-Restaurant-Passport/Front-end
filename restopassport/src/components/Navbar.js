@@ -1,9 +1,13 @@
 import React from 'react'
+
 import { Route, NavLink, withRouter, Redirect } from 'react-router-dom';
 
 import "antd/dist/antd.css";
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 
+
+
+const { SubMenu } = Menu;
 
 const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -73,4 +77,5 @@ function Navbar () {
 //   margin: 16px 24px 16px 0;
 //   float: left;
 // }
+
   export default Navbar;
