@@ -25,7 +25,7 @@ import * as types from "./actions";
 //   }
 // }
 
-const initialRestos = [];
+const initialRestos = {};
 
 
 export function restosReducer(state = initialRestos, action) {

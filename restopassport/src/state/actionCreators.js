@@ -69,7 +69,7 @@ export function fetchRestos(restos) {
 
 export const getRestos = restosApi => dispatch => {
   axiosWithAuth()
-    .get(restosDetailApi)
+    .get('https://build-restaurant-passport.herokuapp.com/cities/3/restaurants')
     .then(response => {
         const restos = response.data;
         dispatch(fetchRestos(restos));
@@ -188,3 +188,4 @@ export const deleteResto = (state, id) => {
 // })
 // .catch(error => console.log('detail fetching error'));
 // }
+
