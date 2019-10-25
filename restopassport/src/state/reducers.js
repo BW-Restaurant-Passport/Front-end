@@ -56,7 +56,6 @@ export function cityReducer(state = initialCityFetchState, action) {
       return state;
   }
 } 
-//Ask Samuel about this code
 
 const initialDetail = {};
 export const restoDetailReducer = (state = initialDetail, action) => { 
@@ -71,16 +70,3 @@ export const restoDetailReducer = (state = initialDetail, action) => {
             return state;
     }
 }
-        
-        // const initialCityFetchState= [];
-                
-        // export function cityReducer (state = initialCityFetchState, action) {
-        //     switch(action.type) {
-        //         case types.FETCH_CITY:
-        //             return [...state, 
-        //                 ...action.payload]
-                        
-        //         default: 
-        //             return state;
-        //     }
-        // }

@@ -77,7 +77,6 @@ export const getRestos = restosApi => dispatch => {
 }
 
 
-
 //actionCreators to fetch details on RESTOS
 
 export function fetchRestosDetails (restos) {
@@ -89,17 +88,17 @@ export function fetchRestosDetails (restos) {
 
 export const getRestosDetails = (restID) => dispatch => {
 
-  debugger
-  axiosWithAuth().get(`https://build-restaurant-passport.herokuapp.com/cities/restaurants${restID}`)
+  axiosWithAuth().get(`https://build-restaurant-passport.herokuapp.com/cities/restaurants/${restID}`)
 
   .then( response => {
-     
     const restos = response.data;
+    console.log('weeknd', restos )
     dispatch(fetchRestosDetails(restos))
   }
   )
   .catch(error => console.log(error))
 }
+
 
 
 //actionCreators to ADD DETAILS RESTAURANT

@@ -5,7 +5,7 @@ import axiosWithAuth from '../helpers/axiosWithAuth';
 import { connect } from 'react-redux';
 import * as actionCreators from "../state/actionCreators";
 import { restoDetailReducer } from '../state/reducers';
-
+import { Spin } from 'antd';
 const restosApi = "https://build-restaurant-passport.herokuapp.com/cities/3/restaurants";
 
 
@@ -21,7 +21,7 @@ export function RestoList ({restoDetails, getRestos}) {
             {
                 !Object.keys(restoDetails).length
                 ?
-                <div>loading</div>
+                <Spin/>
                 :
                 restoDetails.restaurants.map(resto => (     
                 <RestoCard resto={resto} key={resto.restID} state={restoDetails}
